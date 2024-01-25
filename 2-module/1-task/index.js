@@ -13,7 +13,5 @@ function sumSalary(salaries) {
 }
 
 function isNumber (value) {
-  if (typeof value === 'number' && !isNaN(value) && isFinite(value)) return true;
-
-  return false;
+  return typeof value === 'number' && isFinite(value);
 }

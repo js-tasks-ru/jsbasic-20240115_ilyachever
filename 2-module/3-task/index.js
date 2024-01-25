@@ -12,7 +12,7 @@ let calculator = {
   getInputValue(value) {
     value = parseFloat(value);
 
-    if (isNaN(value) || !isFinite(value) || !value) {
+    if (!value || !isFinite(value)) {
       return 0;
     }
 
