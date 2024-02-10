@@ -56,7 +56,7 @@ function initialize(carousel) {
   };
 
   const toggleSlider = (direction) => {
-    const currentSlideWidth = getCurrentSlideWidth(carouselFeed);
+    const currentSlideWidth = getCurrentSlideWidth();
     const currentSlideOffset = getCurrentSlideOffset(direction, currentSlideWidth);
 
     carouselFeed.style.transform = `translateX(${currentSlideOffset}px)`;
