@@ -62,11 +62,7 @@ function initialize(carousel) {
     carouselFeed.style.transform = `translateX(${currentSlideOffset}px)`;
   };
 
-  updateControls();
-
-  carousel.addEventListener('click', (evt) => {
-    const {target} = evt;
-
+  const handleToggle = ({target}) => {
     if (target.classList.contains('carousel__arrow_left')) {
       toggleSlider('backward');
       position--;
@@ -78,5 +74,9 @@ function initialize(carousel) {
     }
 
     updateControls();
-  });
+  };
+
+  updateControls();
+
+  carousel.addEventListener('click', handleToggle);
 }
