@@ -11,9 +11,5 @@ function toggleElementVisibility() {
 
   if (!textElement) return;
 
-  if (textElement.hasAttribute('hidden')) {
-    textElement.removeAttribute('hidden');
-  } else {
-    textElement.setAttribute('hidden', true);
-  }
+  textElement.hidden = !textElement.hidden;
 }
