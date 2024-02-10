@@ -40,7 +40,7 @@ function initialize(carousel) {
     }
   };
 
-  const getSlideOffset = (direction, slideWidth) => {
+  const getCurrentSlideOffset = (direction, slideWidth) => {
     switch (direction) {
     case 'forward':
       currentOffset -= slideWidth;
@@ -57,7 +57,7 @@ function initialize(carousel) {
 
   const toggleSlider = (direction) => {
     const currentSlideWidth = getCurrentSlideWidth(carouselFeed);
-    const currentSlideOffset = getSlideOffset(direction, currentSlideWidth);
+    const currentSlideOffset = getCurrentSlideOffset(direction, currentSlideWidth);
 
     carouselFeed.style.transform = `translateX(${currentSlideOffset}px)`;
   };
