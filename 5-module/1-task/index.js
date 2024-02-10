@@ -1,9 +1,9 @@
 function hideSelf() {
   const button = document.querySelector('.hide-self-button');
 
-  function hideSelf() {
+  function hide() {
     this.setAttribute('hidden', true);
   }
 
-  button.addEventListener('click', hideSelf);
+  button.addEventListener('click', hide);
 }
