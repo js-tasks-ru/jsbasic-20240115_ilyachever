@@ -11,7 +11,7 @@ function highlight(table) {
 
     parentElement.classList.add(statusVariants[isAvailable]);
 
-    if (!Boolean('available' in element.dataset)) parentElement.setAttribute('hidden', true);
+    if (!('available' in element.dataset)) parentElement.setAttribute('hidden', true);
   };
 
   const setGender = (element) => {
