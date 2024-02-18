@@ -30,7 +30,7 @@ export default class ProductCard {
         detail: this._id,
         bubbles: true
       });
-      console.log(event)
+
       target.dispatchEvent(event);
     }
   }
