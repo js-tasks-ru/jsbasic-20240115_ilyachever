@@ -1,6 +1,7 @@
 import createElement from '../../assets/lib/create-element.js';
 import escapeHtml from '../../assets/lib/escape-html.js';
 import convertPrice from '../../assets/lib/convert-price.js';
+import handleError from "../../assets/lib/error-handler.js";
 
 import Modal from '../../7-module/2-task/index.js';
 
@@ -207,9 +208,11 @@ export default class Cart {
             </p>
           </div>
         `));
+      } else {
+        handleError(response);
       }
     } catch (err) {
-      console.error(err);
+      console.error(`Произошла ошибка: ${err}`);
     }
   }
 

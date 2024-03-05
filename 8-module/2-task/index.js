@@ -55,6 +55,5 @@ export default class ProductGrid {
 
     productsHolder.innerHTML = '';
     this._filteredProducts.forEach(filteredProduct => productsHolder.append(new ProductCard(filteredProduct).elem));
-    console.log(this._filteredProducts.length);
   }
 }

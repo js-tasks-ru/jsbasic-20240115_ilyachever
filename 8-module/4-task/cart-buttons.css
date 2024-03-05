@@ -4,29 +4,18 @@
 }
 
 .cart-buttons__button {
-  padding-right: 54px !important;
-}
+  padding: 12px 24px;
+  min-width: 220px;
+  max-width: 100%;
 
-.cart-buttons__button:after {
-  content: "";
-  position: absolute;
-  right: 24px;
-  top: 50%;
-  transform: translate(0, -50%);
-  background: url("/assets/images/icons/angle-sm-icon.svg") center no-repeat;
-  background-size: cover;
-  width: 10px;
-  height: 18px;
-}
+  background-color: var(--color-yellow);
 
-.cart-buttons__button.is-loading:after {
-  position: absolute;
-  top: 22px;
-  right: 16px;
+  cursor: pointer;
 }
 
 .cart-buttons__info {
   padding: 11px 14px 13px;
+  margin-bottom: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;

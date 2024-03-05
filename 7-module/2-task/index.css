@@ -26,10 +26,12 @@
   left: 50%;
   transform: translate(-50%, -50%);
   max-width: 994px;
+  max-height: calc(100% - 40px);
   width: 100%;
   background-color: var(--color-black);
   display: flex;
   flex-direction: column;
+  overflow-y: scroll;
 }
 
 .modal__header {
