@@ -85,8 +85,8 @@ export default class RibbonMenu {
     }
 
     target.classList.add(this._controls.activeCategory);
-    this._currentId = target.dataset.id ? target.dataset.id : 'all';
-    dispatchEvent(this.elem, 'ribbon-select', this._currentId);
+    this.categoryId = target.dataset.id ? target.dataset.id : '';
+    dispatchEvent(this.elem, 'ribbon-select', this.categoryId);
   }
 
   #renderMenu() {
@@ -97,7 +97,7 @@ export default class RibbonMenu {
       </button>
       <nav class="ribbon__inner">
         ${this.categories
-          .map(({id, name}) => `<a href="#" class="ribbon__item" data-id="${id}">${name}</a>`
+          .map(({id, name}) => `<a class="ribbon__item" data-id="${id}">${name}</a>`
         ).join('')}
       </nav>
       <button class="ribbon__arrow ribbon__arrow_right ribbon__arrow_visible">

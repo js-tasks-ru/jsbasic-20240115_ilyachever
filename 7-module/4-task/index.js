@@ -15,14 +15,14 @@ export default class StepSlider {
 
   constructor({steps, value = 2}) {
     this._steps = steps || 0;
-    this._initialValue = value;
+    this.value = value;
 
     this.elem = this.#renderStepSlider();
     this.#handleDnD();
   }
 
   #calculateInitialOffset() {
-    return this._initialValue * (100 / (this._steps - 1));
+    return this.value * (100 / (this._steps - 1));
   }
 
   #calculateOffsetForClick(e) {
@@ -81,7 +81,7 @@ export default class StepSlider {
     return `
       <div class="slider__steps">
       ${new Array(this._steps).fill(0).map((_, index) => {
-      return index === this._initialValue ? `<span class="${this._sliderElements.activeStep}"></span>` : '<span></span>';
+      return index === this.value ? `<span class="${this._sliderElements.activeStep}"></span>` : '<span></span>';
     }).join('')}
       </div>
     `;
@@ -118,7 +118,7 @@ export default class StepSlider {
     const stepSlider = createElement(`
       <div class="slider">
       <div class="slider__thumb" style="left: ${this.#calculateInitialOffset()}%;">
-        <span class="slider__value">${this._initialValue}</span>
+        <span class="slider__value">${this.value}</span>
       </div>
       <div class="slider__progress" style="width: ${this.#calculateInitialOffset()}%;"></div>
       ${this.#renderSteps()}
